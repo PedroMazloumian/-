@@ -269,3 +269,12 @@ function myFunction() {
   //   mood.innerHTML = `light <i class="bx bx-sun"></i>`;
   // }
 }
+
+let el = document.querySelector('.scroller');
+let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+window.addEventListener("scroll", function(){
+
+  let scrollTop = this.document.documentElement.scrollTop;
+  el.style.width = `${(scrollTop / height) * 100}%`;
+});
